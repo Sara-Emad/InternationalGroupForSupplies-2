@@ -1,0 +1,19 @@
+.css-1t6c9ts{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MuiBox-root Button{
+  color: #fff;
+  opacity: 0.9;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.MuiBox-root Button:hover {
+  color:#95d0a2;
+  opacity: 1;
+  font-size: 0.9rem;
+
+}
