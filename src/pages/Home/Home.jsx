@@ -2,7 +2,6 @@ import {
   Box,
   Button,
   Container,
-  Stack,
   Typography,
   useTheme,
 } from "@mui/material";
@@ -17,14 +16,15 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Slider.css";
+import { green } from '@mui/material/colors';
 
 
 // arry for repate (map) element
 // repate element التكرار, use array with map and not forget key
 
 const mySlider = [
-  { text: "MEN", link: "public/images/s2.jpg" },
-  { text: "WOMEN", link: "public/images/s4-1.jpg" },
+  { text: "International Group For Supplies", link: "public/images/s2.jpg" },
+  { text: "International Group For Supplies", link: "public/images/s4-1.jpg" },
 ];
 const Home = () => {
   const theme = useTheme();
@@ -61,18 +61,18 @@ const Home = () => {
                     },
                   }}
                 >
-                  <Typography variant="h5" sx={{ color: "#222" }}>
-                    LIFE STYLE COLLECTION
+                  <Typography variant="h4" sx={{ fontWeight:400,color: theme.palette.mode === "dark" ? "white" :   "white" }}>
+                    Welcome to
                   </Typography>
       
                   <Typography
-                    variant="h4"
-                    sx={{ color: "#222", fontWeight: 400, my: 2 }}
+                    variant="h5"
+                    sx={{ color: theme.palette.mode === "dark" ?   green[200]  :  green[200] , fontWeight: 500, my: 2 }}
                   >
                     {item.text}
                   </Typography>
       
-                  <Stack
+                  {/* <Stack
                     sx={{ justifyContent: { xs: "center", sm: "left" } }}
                     direction={"row"}
                     alignItems={"center"}
@@ -90,13 +90,13 @@ const Home = () => {
                     sx={{ color: "#000", my: 1, fontWeight: 300 }}
                   >
                     Get Free shopping on orders over $99.00
-                  </Typography>
+                  </Typography> */}
                   <Button
                     sx={{
                       mx: 5,
                       py: 1,
                       mt: 2,
-                      bgcolor: "#222",
+                      bgcolor:  theme.palette.mode === "dark" ?   green[200]  :  green[200],
                       boxShadow: "0px 4px 16px rgba(43, 52 ,69 , 0.1)",
                       color: "#fff",
                       borderRadius: "1px",
@@ -107,8 +107,7 @@ const Home = () => {
                     }}
                     variant="contained"
                   >
-                    {" "}
-                    Shop now
+                  Get Start
                   </Button>
                 </Box>
               </SwiperSlide>
