@@ -16,32 +16,34 @@ import { Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "./Slider.css";
-import { green } from '@mui/material/colors';
+import { brown, green } from '@mui/material/colors';
 
 
 // arry for repate (map) element
 // repate element التكرار, use array with map and not forget key
 
 const mySlider = [
-  { text: "International Group For Supplies", link: "public/images/s2.jpg" },
   { text: "International Group For Supplies", link: "public/images/s4-1.jpg" },
+  { text: "International Group For Supplies", link: "public/images/s2.jpg" },
 ];
 const Home = () => {
   const theme = useTheme();
   return (
     <Container>
-    <Box  sx={{pt:2, mt: 2.5, display: "flex", alignItems: "center", gap: 2 }}>
+    <Box flexGrow={1} sx={{mt: 1 , display: "flex", alignItems: "center", gap: 2 }}>
         <Swiper
           loop={true}
           className=" mySwiper"
           pagination={{
             dynamicBullets: true,
           }}
+          autoplay={ true} 
           modules={[Pagination]}
         >
           {mySlider.map((item) => {
             return (
-              <SwiperSlide key={item.link} className="parent-slider">
+              <SwiperSlide
+               key={item.link} className="parent-slider">
                 <img src={item.link} alt="" />
                 <Box
                   // اكواد ميديا كويري لجعل هذة الخصائص عند الشاشات الاكبر من سمول نحضرها من
@@ -101,7 +103,7 @@ const Home = () => {
                       color: "#fff",
                       borderRadius: "1px",
                       "&:hover": {
-                        bgcolor: "#151515",
+                        bgcolor: theme.palette.mode === "dark" ?   brown[500]  :  brown[500],
                         boxShadow: "0px 4px 16px rgba(43, 52 ,69 , 0.1)",
                       },
                     }}
