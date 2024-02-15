@@ -10,7 +10,7 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
+// import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { green } from "@mui/material/colors";
@@ -109,19 +109,23 @@ const Header2 = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
+            
             >
               {pages.map((item) => (
                 <MenuItem
                   key={item.path}
-                  onClick={handleCloseNavMenu}
+                    onClick={() => {
+                navigate(item.path), handleCloseNavMenu;
+              }}
                   className=" css-1t6c9ts"
+                
                 >
                   <Typography textAlign="center">{item.text}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+          {/* <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} /> */}
           <Typography
             variant="h5"
             noWrap
@@ -138,10 +142,10 @@ const Header2 = () => {
               textDecoration: "none",
             }}
           >
-            LOGO
+            I G S
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }}}>
             {pages.map((item) => (
               <Button
                 key={item.path}
@@ -191,7 +195,9 @@ const Header2 = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((item) => (
-                <MenuItem key={item.path} onClick={handleCloseUserMenu}>
+                <MenuItem key={item.path}  onClick={() => {
+                  navigate(item.path), handleCloseUserMenu;
+                }}>
                   <Typography textAlign="center">{item.text}</Typography>
                 </MenuItem>
               ))}
