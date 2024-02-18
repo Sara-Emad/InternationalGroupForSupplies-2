@@ -1,7 +1,7 @@
 import { KeyboardArrowUp } from "@mui/icons-material";
 import { Fab, Zoom, useScrollTrigger } from "@mui/material";
 
-const Scrolltotop = () => {
+const ScrollToTop = () => {
   return (
     // ===================
     // hook for materialui called usescroll
@@ -13,9 +13,9 @@ const Scrolltotop = () => {
         window.scrollTo(0,0)
       }}
         sx={{ position: "fixed", bottom: 33, right: 33 }}
-        size="small"
+        size="medium"
         variant="extended"
-        color="primary"
+        color="success"
         aria-label="add"
       >
         <KeyboardArrowUp fontSize="medium" />
@@ -24,4 +24,4 @@ const Scrolltotop = () => {
   );
 };
 
-export default Scrolltotop;
+export default ScrollToTop;

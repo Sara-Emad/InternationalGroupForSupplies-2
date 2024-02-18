@@ -8,6 +8,7 @@ import Footer from "./components/footer/Footer";
 import Home from "./pages/Home/Home";
 import Aboutus from "./pages/Aboutus/Aboutus";
 import Products from "./pages/Products/Products";
+import ScrollToTop from "./components/scroll/ScrollToTop";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -91,7 +92,7 @@ function App() {
           />
         </Routes>
 
-        {/* <Scrolltotop/> */}
+        <ScrollToTop/>
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
