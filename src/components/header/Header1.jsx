@@ -3,8 +3,8 @@ import { DarkModeOutlined, LightModeOutlined } from "@mui/icons-material";
 import { ColorModeContext } from "../../theme";
 import {
   Box,
-  Button,
   Container,
+  Grid,
   IconButton,
   Stack,
   Typography,
@@ -13,7 +13,7 @@ import {
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-
+import "./header.css";
 import { useTranslation } from "react-i18next";
 
 const Header1 = () => {
@@ -25,7 +25,7 @@ const Header1 = () => {
   return (
     <Box
       sx={{
-        bgcolor:theme.palette.mode === "dark" ?  "#283445":  "#2834458b",
+        bgcolor:theme.palette.mode === "dark" ?  "#fbfbfb":  "#fbfbfb",
         py: "7px",
         borderBottomRightRadius: 6,
         borderBottomLeftRadius: 6,
@@ -41,7 +41,7 @@ const Header1 = () => {
               borderRadius: "12px",
               fontSize: "19px",
               fontWeight: "bold",
-              color: "#fff",
+              color: "#0f2f57",
             }}
             variant="body2"
           >
@@ -62,7 +62,7 @@ const Header1 = () => {
                 }}
                 color="inherit"
               >
-                <LightModeOutlined sx={{ fontSize: "small", color: "white" }} />
+                <LightModeOutlined sx={{ fontSize: "", color: "#0f2f57" }} />
               </IconButton>
             ) : (
               <IconButton
@@ -75,35 +75,37 @@ const Header1 = () => {
                 }}
                 color="inherit"
               >
-                <DarkModeOutlined sx={{ fontSize: "small" }} />
+                <DarkModeOutlined sx={{ fontSize: "" ,color: "#0f2f57"  }} />
               </IconButton>
             )}
           </div>
 
-          <Button
-            sx={{ color: theme.palette.mode === "dark" ? "white" : "white" }}
-            onClick={() => i18n.changeLanguage("en")}
-          >
-            En
-          </Button>
-          <Button
-            sx={{ color: theme.palette.mode === "dark" ? "white" : "white" }}
-            onClick={() => i18n.changeLanguage("fr")}
-          >
-            Fr
-          </Button>
-          <Button
-            sx={{ color: theme.palette.mode === "dark" ? "white" : "white" }}
-            onClick={() => i18n.changeLanguage("ar")}
-          >
-            Ar
-          </Button>
+          <Grid>
+            <IconButton
+              sx={{ color:  "#0f2f57",  fontSize: "16px", }}
+              onClick={() => i18n.changeLanguage("en")}
+            >
+              En
+            </IconButton>
+            <IconButton
+              sx={{ color:  "#0f2f57",  fontSize: "16px", }}
+              onClick={() => i18n.changeLanguage("fr")}
+            >
+              Fr
+            </IconButton>
+            <IconButton
+              sx={{ color:  "#0f2f57",  fontSize: "16px" }}
+              onClick={() => i18n.changeLanguage("ar")}
+            >
+              Ar
+            </IconButton>
+          </Grid>
 
           <IconButton>
             <TwitterIcon
               sx={{
                 fontSize: "16px",
-                color: "#fff",
+                color: "#0f2f57",
               }}
             />
           </IconButton>
@@ -113,7 +115,7 @@ const Header1 = () => {
               sx={{
                 fontSize: "16px",
 
-                color: "#fff",
+                color: "#0f2f57",
               }}
             />
           </IconButton>
@@ -122,7 +124,7 @@ const Header1 = () => {
             <InstagramIcon
               sx={{
                 fontSize: "16px",
-                color: "#fff",
+                color: "#0f2f57",
               }}
             />
           </IconButton>

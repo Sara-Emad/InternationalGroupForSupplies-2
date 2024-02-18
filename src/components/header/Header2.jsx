@@ -59,7 +59,7 @@ const Header2 = () => {
   const theme = useTheme();
 
   return (
-    <AppBar position="static" sx={{ bgcolor: "#009970" }}>
+    <AppBar   sx={{display: "flex", bgcolor: "#027315", position:"sticky" , zIndex:1030}}>
       <Container>
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
@@ -109,16 +109,14 @@ const Header2 = () => {
               sx={{
                 display: { xs: "block", md: "none" },
               }}
-            
             >
               {pages.map((item) => (
                 <MenuItem
                   key={item.path}
-                    onClick={() => {
-                navigate(item.path), handleCloseNavMenu;
-              }}
+                  onClick={() => {
+                    navigate(item.path), handleCloseNavMenu;
+                  }}
                   className=" css-1t6c9ts"
-                
                 >
                   <Typography textAlign="center">{item.text}</Typography>
                 </MenuItem>
@@ -145,7 +143,7 @@ const Header2 = () => {
             I G S
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" }}}>
+          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((item) => (
               <Button
                 key={item.path}
@@ -157,7 +155,7 @@ const Header2 = () => {
                   my: 2,
                   color: "white",
                   display: "block",
-                
+
                   bgcolor:
                     // location ===> from react router dom
                     location.pathname === item.path
@@ -195,9 +193,12 @@ const Header2 = () => {
               onClose={handleCloseUserMenu}
             >
               {settings.map((item) => (
-                <MenuItem key={item.path}  onClick={() => {
-                  navigate(item.path), handleCloseUserMenu;
-                }}>
+                <MenuItem
+                  key={item.path}
+                  onClick={() => {
+                    navigate(item.path), handleCloseUserMenu;
+                  }}
+                >
                   <Typography textAlign="center">{item.text}</Typography>
                 </MenuItem>
               ))}

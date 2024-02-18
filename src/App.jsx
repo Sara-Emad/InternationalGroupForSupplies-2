@@ -1,15 +1,13 @@
 import Header1 from "./components/header/Header1";
 import Header2 from "./components/header/Header2";
-
+import { Routes, Route } from "react-router-dom";
 import { Box, CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
-import { Outlet } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 import Footer from "./components/footer/Footer";
-// import Hero from "./components/Hero/Hero";
-// import Main from "./components/Main/main";
-// import Footer from "./components/Footer/footer";
-// import Scrolltotop from "./components/Scroll/Scrolltotop";
-
+import Home from "./pages/Home/Home";
+import Aboutus from "./pages/Aboutus/Aboutus";
+import Products from "./pages/Products/Products";
 
 function App() {
   const [theme, colorMode] = useMode();
@@ -25,24 +23,75 @@ function App() {
       >
         <CssBaseline />
 
-        
-        <Header1 />
-        <Header2 />
-        <Outlet/>
-      
-        <Box
-          sx={{
-            bgcolor:
-              // @ts-ignore
-              theme.palette.bg.main,
-          }}
-        >
-          {/* <Hero />
-          <Main /> */}
-        </Box>
-      <Footer />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Header1 />
+                <Header2 />
+                <Home />
+                <Aboutus />
+                <Products/>
+                <Box
+                  sx={{
+                    bgcolor:
+                      // @ts-ignore
+                      theme.palette.bg.main,
+                  }}
+                ></Box>
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path="/Home"
+            element={
+              <>
+                <Header1 />
+                <Header2 />
+                <Home />
+                <Aboutus />
+                <Products/>
+              
+                <Box
+                  sx={{
+                    bgcolor:
+                      // @ts-ignore
+                      theme.palette.bg.main,
+                  }}
+                ></Box>
+                <Footer />
+              </>
+            }
+          />
 
-          {/* <Scrolltotop/> */}
+          <Route
+            path="/Aboutus"
+            element={
+              <>
+                <Header1 />
+                <Header2 />
+                <Aboutus />
+                <Footer />
+              </>
+            }
+          />
+
+          <Route
+            path="/Products"
+            element={
+              <>
+                <Header1 />
+                <Header2 />
+                <Products/>
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
+
+        {/* <Scrolltotop/> */}
       </ThemeProvider>
     </ColorModeContext.Provider>
   );
