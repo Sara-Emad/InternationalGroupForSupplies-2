@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 import "./Products.css";
-import { myProjects } from "./ProductDetails";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTheme } from "@emotion/react";
 import { Close } from "@mui/icons-material";
@@ -69,7 +68,7 @@ const Products = () => {
     setcurrentActive(ButtonCategory);
 
     const newArr = data.filter((item) => {
-      const ZZZ = item.category.find((myItem) => {
+      const ZZZ = item.id.find((myItem) => {
         return myItem === ButtonCategory;
       });
 
